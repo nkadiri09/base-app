@@ -24,6 +24,11 @@ public class ProductController {
         return service.listAll();
     }
 
+    @GetMapping("/products/{id}")
+    public Product get(@PathVariable Integer id) {
+        return service.get(id, "/products/{id}");
+    }
+
     @PostMapping("/products")
     public void addProduct(@RequestBody Product product) {
         service.save(product);
